@@ -2027,7 +2027,8 @@ err_mbhc_sw_irq:
 	mutex_destroy(&mbhc->codec_resource_lock);
 err:
 	pr_debug("%s: leave ret %d\n", __func__, ret);
-#ifdef CONFIG_MACH_XIAOMI_LIME
+#if 0
+	//def CONFIG_MACH_XIAOMI_LIME
 	switch_dev_unregister(&accdet_data);
 #endif
 	return ret;
@@ -2061,7 +2062,8 @@ void wcd_mbhc_deinit(struct wcd_mbhc *mbhc)
 	mutex_destroy(&mbhc->codec_resource_lock);
 	mutex_destroy(&mbhc->hphl_pa_lock);
 	mutex_destroy(&mbhc->hphr_pa_lock);
-#ifndef CONFIG_MACH_XIAOMI_LIME
+#if 0
+//ndef CONFIG_MACH_XIAOMI_LIME
 	switch_dev_unregister(&accdet_data);
 #endif
 }
